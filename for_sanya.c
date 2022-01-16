@@ -19,12 +19,24 @@ void free_env(t_data *data)
     free(data->env);
 }
 
+t_envp *struct_head (t_envp *envp)
+{
+    t_envp *tmp;
+
+    tmp = envp;
+    while(tmp->prev)
+        tmp = tmp->prev;
+    envp = tmp;
+    return (envp);
+}
+
 t_envp *init_t_envp(t_data *data, t_envp *envp)
 {
-    int i = 0;
+    int i = -1;
     char **tmp;
+   
 
-    while (data->env[i])
+    while (data->env[++i])
     {
         tmp = ft_strsplit(data->env[i], '=');
         // printf("%p\n", envp);
@@ -33,7 +45,6 @@ t_envp *init_t_envp(t_data *data, t_envp *envp)
         else
             push_back(tmp[0], tmp[1], envp);
            free(tmp);
-        i++;
     }
     return (envp);
 }
@@ -64,7 +75,7 @@ int main(int argc, char **argv, char **env)
 {
     t_data *data;
     t_envp *envp;
-    t_sort *sort;
+    //t_sort *sort;
     int i = 0;
     (void)argc;
     (void)argv;
@@ -81,12 +92,13 @@ int main(int argc, char **argv, char **env)
         printf("kkkzzz");
         exit(2);
     }
-    printf("%s=%s\n", envp->name, envp->value);
-    // while (envp)
-    // {
-    //     printf("%s = %s\n", envp->name, envp->value);
-    //     envp = envp->next;
-    // }
+    ft_pwd();
+    ft_cd(envp);
+    while (envp)
+    {
+        printf("\t%d -- %s = %s\n", envp->key, envp->name, envp->value);
+        envp = envp->next;
+    }
 
     printf("%s\n", data->env[i]);
     //printf("%s=%s\n", envp->name, envp->value);

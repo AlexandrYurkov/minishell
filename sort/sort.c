@@ -1,11 +1,11 @@
 // Операции с двоичным деревом поиска на C
 
+#include "minishell.h"
 
-
-#include <stdio.h>
-#include <stdlib.h>
+// #include <stdio.h>
+// #include <stdlib.h>
 struct node {
-  int key;
+  int key;// имя envp->name
   struct node *left, *right;
 };
 
@@ -91,23 +91,23 @@ struct node *deleteNode(struct node *root, int key) {
 }
 
 // Тестим функции
-int main() {
-  struct node *root = NULL;
-  root = insert(root, 8);
-  root = insert(root, 3);
-  root = insert(root, 1);
-  root = insert(root, 154);
-  root = insert(root, 7);
-  root = insert(root, 10);
-  root = insert(root, 14);
-  root = insert(root, 4);
+// int main() {
+//   struct node *root = NULL;
+//   root = insert(root, 8);
+//   root = insert(root, 3);
+//   root = insert(root, 1);
+//   root = insert(root, 154);
+//   root = insert(root, 7);
+//   root = insert(root, 10);
+//   root = insert(root, 14);
+//   root = insert(root, 4);
 
-  printf("Отсортированный обход: ");
-  inorder(root);
+//   printf("Отсортированный обход: ");
+//   inorder(root);
 
-  printf("\nПосле удаления 10\n");
-  root = deleteNode(root, 7);
+//   printf("\nПосле удаления 10\n");
+//   root = deleteNode(root, 7);
 
-  printf("Отсортированный обход: ");
-  inorder(root);
-}
+//   printf("Отсортированный обход: ");
+//   inorder(root);
+// }

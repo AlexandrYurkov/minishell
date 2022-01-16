@@ -5,7 +5,8 @@ HEADER		=	minishell.h
 SRCS		= 	for_sanya.c \
 				ft_echo.c \
 				ft_split.c \
-				listfun.c
+				listfun.c \
+				utils.c
 
 OBJS		=	$(SRCS:.c=.o)
 
