@@ -38,6 +38,7 @@ struct s_envp
     char *name;
     char *value;
     int key;
+    int check_bit;
     struct s_envp *next;
     struct s_envp *prev;
 };
