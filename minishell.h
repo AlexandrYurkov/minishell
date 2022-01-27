@@ -61,6 +61,9 @@ void	ft_lstclear(t_envp **lst);
 void    ft_pwd(void);
 int		ft_strcmp(const char *s1, const char *s2);
 void    ft_cd(t_envp *envp);
+void    swap_list(t_envp *list);
+void    ft_export(t_envp *envp);
+t_envp *struct_head (t_envp *envp);
 
 
 #endif

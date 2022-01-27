@@ -92,17 +92,8 @@ int main(int argc, char **argv, char **env)
         printf("kkkzzz");
         exit(2);
     }
-    //ft_pwd();
-    ft_cd(envp);
-    while (envp)
-    {
-        printf("\t%d -- %d -- %s = %s\n", envp->key, envp->check_bit, envp->name, envp->value);
-        envp = envp->next;
-    }
-
-    //printf("%s\n", data->env[i]);
-    //printf("%s=%s\n", envp->name, envp->value);
-
+    ft_export(envp);
+    
     free_env(data);
     ft_lstclear(&envp);
     //free(envp);

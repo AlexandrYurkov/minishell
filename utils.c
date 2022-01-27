@@ -55,11 +55,36 @@ void ft_cd(t_envp *envp) // добавить пременую команды, м
      }
     //free(pwd);
 }
+t_envp *ft_head(t_envp *list)
+{
+    while(list->prev)
+        list = list->prev;
+    return (list);
+}
 
-// void ft_export(t_envp *envp)
-// {
-//     struct node *root;
+t_envp *max_p(t_envp *tmp, int sum)
+{
+    while(tmp->next || sum < 0)
+        tmp = tmp->next;
 
-//     root = NULL;
-//     while()
-// }
+    return (tmp);
+}
+
+void ft_export(t_envp *envp)
+{
+    t_envp *sort;
+  
+    sort = envp;
+    swap_list(sort);
+}
+
+t_envp *ft_unset(t_envp *envp, char *name)
+{
+    t_envp *tmp;
+
+    tmp = envp;
+    tmp = search_name(tmp, name);
+
+    // функция удаления листа
+
+}

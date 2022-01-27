@@ -6,7 +6,8 @@ SRCS		= 	for_sanya.c \
 				ft_echo.c \
 				ft_split.c \
 				listfun.c \
-				utils.c
+				utils.c \
+				swap_val_list.c
 
 OBJS		=	$(SRCS:.c=.o)
 
