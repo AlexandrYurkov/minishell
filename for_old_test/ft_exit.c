@@ -5,6 +5,12 @@
 //  если приходит строка возвращяет первое слово до пробел или число больше 19 знаков и выходит $? = 255
 // bash: exit: adcbkk: numeric argument required
 //  если подается одно число меньше 19 знаков, то в зависимости от знака возвращает от 0 до 255 (unsignet char)
+
+//на вход приходит 2х-мерный массив. Первый аргумент это "exit" пример "exit (hello)"
+//bash-3.2$ exit (0)
+// bash: syntax error near unexpected token `0'
+// exit не отробатывает, shlvl не меняется.
+// обработать $? 
 int	ft_isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
@@ -56,17 +62,15 @@ void ft_out(int value)
 	exit(value); // возможно понадобиться делать через return
 }
 
-void ft_exit(char *av)
+void ft_exit(char **str)
 {
-	char **str;
 	int i;
+	i = array_len(str);
 
-	if(!av)
+	if(i == 1)
 		ft_out(0);
 	else
-	{
-		str = ft_strsplit(av, ' ');
-		i = array_len(str);
-		
+	{		
+		// дописать условия
 	}
 }
